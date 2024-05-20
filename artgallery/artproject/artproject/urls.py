@@ -21,5 +21,12 @@ from artapp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('art/',views.art,name='art'),
+
+    path('header/',views.header,name='header'),
+    path('footer/',views.footer,name='footer'),
+    path('home/',views.home,name='home'),
+    path('artists/',views.artists,name='artists'),
+    path('artsupplies/',views.artsupplies,name='artsupplies'),
+    path('shop/',views.shop,name='shop'),
+    path('styles/',views.styles,name='styles'),
 ]

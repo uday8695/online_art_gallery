@@ -1,0 +1,25 @@
+.navbar{
+    background-color: orchid;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    text-align: center;
+    display: inline-block;    
+}
+
+.footer {
+    background-color: orchid;
+    color: #fff;
+    padding: 5px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin-bottom: 0;
+}
+header{
+    display: block;
+    
+}

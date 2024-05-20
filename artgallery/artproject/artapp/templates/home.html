@@ -1,0 +1,74 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>home page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        <style>
+            body{
+                padding-top: 70px;
+            }
+        </style>
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        {% include 'header.html' %}
+        
+        <div class="container mt-5">
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Artists</h5>
+                    <p class="card-text">All information about artists is available here</p>
+                    <a href="/artists/" class="btn btn-primary">view artists</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Art supplies</h5>
+                    <p class="card-text">every art supply is Available Here</p>
+                    <a href="/artsupplies/" class="btn btn-primary">Art supplies</a>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Shop</h5>
+                    <p class="card-text">All Information about shopping Available Here</p>
+                    <a href="/shop/" class="btn btn-primary">View shop</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 mb-3">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Styles</h5>
+                    <p class="card-text">different styles are available here</p>
+                    <a href="/styles/" class="btn btn-primary">View styles</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        {% include 'footer.html' %}
+        
+        <script src="" async defer></script>
+    </body>
+</html>
