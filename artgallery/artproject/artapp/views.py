@@ -24,3 +24,9 @@ def artsupplies(request):
 
 def styles(request):
     return render(request,'styles.html')
+
+def Login(request):
+    return render(request,'Login.html')
+
+def Register(request):
+    return render(request,'Register.html')
