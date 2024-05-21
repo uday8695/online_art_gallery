@@ -48,14 +48,14 @@
                       {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="#">Hello, {{ user.username}} </a></li>
                         <li class="nav-item">
-                          <a class="nav-link" href="/accounts/logout">Logout</a>
+                          <a class="nav-link" href="/accounts/logout">logout</a>
                         </li>
                       {% else %}
                         <li class="nav-item">
-                          <a class="nav-link" href="/Login/">Login</a>
+                          <a class="nav-link" href="/accounts/login/">login</a>
                         </li>
                         <li class="nav-item">
-                          <a class="nav-link" href="/Register/">Register</a>
+                          <a class="nav-link" href="/accounts/register/">register</a>
                         </li>
                       {% endif %}
                     </ul>

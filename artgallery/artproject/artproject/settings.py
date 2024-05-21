@@ -38,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'artapp',
+    'artists',
+    'artsupplies',
+    'accounts',
+    'styles',
+    'shop',
     
 ]
 

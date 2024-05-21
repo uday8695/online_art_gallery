@@ -19,23 +19,16 @@ from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings
 
-from artapp import views
+from accounts import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    path('header/',views.header,name='header'),
-    path('footer/',views.footer,name='footer'),
-    path('home/',views.home,name='home'),
-    path('artists/',views.artists,name='artists'),
-    path('artsupplies/',views.artsupplies,name='artsupplies'),
-    path('shop/',views.shop,name='shop'),
-    path('styles/',views.styles,name='styles'),
-    
-    path('accounts/',include('accounts.urls')),
-    # path('artists/',include('artists.urls')),
-    # path('styles/',include('styles.urls')),
-    
-    
+   
+    path('login/',views.login,name='login'),
+    path('register/',views.register,name='register'),
+    path('logout/',views.logout,name='logout'),
+
+   
     
 ]
