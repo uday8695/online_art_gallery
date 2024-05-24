@@ -19,6 +19,9 @@ def artists(request):
 def shop(request):
     return render(request,'shop.html')
 
+def artworks(request):
+    return render(request,'artworks.html')
+
 def artsupplies(request):
     return render(request,'artsupplies.html')
 

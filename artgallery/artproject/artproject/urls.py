@@ -28,6 +28,7 @@ urlpatterns = [
     path('footer/',views.footer,name='footer'),
     path('home/',views.home,name='home'),
     path('artists/',views.artists,name='artists'),
+    path('artworks/',views.artworks,name='artworks'),
     path('artsupplies/',views.artsupplies,name='artsupplies'),
     path('shop/',views.shop,name='shop'),
     path('styles/',views.styles,name='styles'),

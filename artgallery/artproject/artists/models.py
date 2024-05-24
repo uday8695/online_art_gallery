@@ -1,14 +1,19 @@
-# from django.db import models
+from django.db import models
+from datetime import datetime
 
-# from styles.models import styles
-# # Create your models here.
+# Create your models here.
 
-# class Student(models.Model):
-#     first_name = models.CharField(max_length=50)
-#     last_name = models.CharField(max_length=50)
-#     artist_name = models.CharField(max_length=50)
-#     category= models.CharField(max_length=50)
-#     style = models.ForeignKey(styles, on_delete=models.CASCADE, related_name='artists')
+class Artists(models.Model):
+    Artist_id=models.CharField(max_length=50)
+    first_name = models.CharField(max_length=50)
+    last_name = models.CharField(max_length=50)
+    artist_age = models.CharField(max_length=50)
+    category= models.CharField(max_length=50)
+    experience= models.PositiveIntegerField()
+    earnings= models.CharField(max_length=50)
+    no_of_drawings_made=models.PositiveIntegerField()
+    created_at = models.DateTimeField(default=datetime.now)
 
-#     def _str_(self):
-#         return f"{self.first_name} {self.last_name} ({self.roll_number})"
+    def __str__(self):
+        return f"{self.first_name} {self.last_name}"
+    

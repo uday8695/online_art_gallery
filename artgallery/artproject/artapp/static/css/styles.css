@@ -1,6 +1,6 @@
 .navbar{
-    background-color: orchid;
-    color: #fff;
+    background-color:  #007bff;
+    
     position: fixed;
     top: 0;
     text-align: center;
@@ -8,8 +8,8 @@
 }
 
 .footer {
-    background-color: orchid;
-    color: #fff;
+    background-color:  #007bff;
+
     padding: 5px 0;
     position: fixed;
     bottom: 0;
@@ -18,8 +18,4 @@
 
 .footer p {
     margin-bottom: 0;
-}
-header{
-    display: block;
-    
 }

@@ -1,12 +1,12 @@
 
 
-
-from profile import Profile
+from django.contrib.auth.models import User, auth
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login as auth_login
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserRegisterForm
+from . models import Profile
 
 from django.contrib.auth.models import User, auth
 # Create your views here.
@@ -45,10 +45,11 @@ def login(request):
             profile = Profile.objects.get(user=user)
             if profile.user_type == 'admin':
                 return redirect('admin')
-            elif profile.user_type == 'customer':
-                return redirect('customer')
             elif profile.user_type == 'artist':
                 return redirect('artist')
+            elif profile.user_type == 'customer':
+                return redirect('customer')
+            
             else:
                 messages.error(request, 'User type is not recognized')
                 return redirect('login')  # Redirect to appropriate dashboard based on user type
