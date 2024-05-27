@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artists Information</title>
+    <title>Add artwork page</title>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     <style>
@@ -47,8 +47,16 @@
         <form action="{% url 'artists' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="mb-3">
-                <label for="Artist_id" class="form-label">Artist ID</label>
-                <input type="text" class="form-control" id="Artist_id" name="ID" required />
+                <label for="Artwork_id" class="form-label">Artwork ID</label>
+                <input type="text" class="form-control" id="Artwork_id" name="Artwork ID" required />
+            </div>
+            <div class="mb-3">
+                <label for="title" class="form-label">Artwork title</label>
+                <input type="text" class="form-control" id="title" name="Title" required />
+            </div>
+            <div class="mb-3">
+                <label for="artist_id" class="form-label">Artist ID</label>
+                <input type="text" class="form-control" id="artist_id" name="Artist ID" required />
             </div>
             <div class="mb-3">
                 <label for="first_name" class="form-label">First Name</label>
@@ -59,29 +67,34 @@
                 <input type="text" class="form-control" id="last_name" name="Last Name" required />
             </div>
             <div class="mb-3">
-                <label for="artist_age" class="form-label">Artist_Age</label>
-                <input type="number" class="form-control" id="artist_age" name="Artist_Age"required />
+                <label for="medium" class="form-label">Artwork Medium</label>
+                <input type="text" class="form-control" id="medium" name="Artwork Medium"required />
+            </div>
+            <div class="mb-3">
+                <label for="dimensions" class="form-label"> Dimensions</label>
+                <input type="text" class="form-control" id="dimensions" name="Dimensions" required />
             </div>
             <div class="mb-3">
                 <label for="category" class="form-label"> category</label>
                 <input type="text" class="form-control" id="category" name="Category"  placeholder="drawing,painting,sculpture,watercolor" required />
             </div>
             <div class="mb-3">
-                <label for="experience" class="form-label">experience</label>
-                <input type="number" class="form-control" id="experience" name="Experience" required />
+                <label for="price" class="form-label">Artwork price</label>
+                <input type="number" class="form-control" id="price" name="Price" required />
             </div>
             <div class="mb-3">
-                <label for="earnings" class="form-label">Earnings</label>
-                <input type="text" class="form-control" id="earnings" name="Earnings" required />
+                <label for="description" class="form-label"> Discription</label>
+                <input type="text" class="form-control" id="discription" name="Discription" required />
             </div>
             <div class="mb-3">
-                <label for="no_of_drawings_made" class="form-label">No_of_Drawings_made</label>
-                <input type="number" class="form-control" id="no_of_drawings_made" name="No_of_Drawings_made" required />
+                <label for="status" class="form-label">Purchase_status</label>
+                <input type="text" class="form-control" id="status" name="Purchase_status" required />
             </div>
             <div class="mb-3">
-                <label for="date" class="form-label">Date</label>
-                <input type="date" class="form-control" id="date" name="created_date" required />
+                <label for="image_url" class="form-label">image</label>
+                <input type="url" class="form-control" id="image_url" name="image" required />
             </div>
+            
             <div>
                 <button type="submit" class="btn btn-primary" >Submit</button>
             </div>

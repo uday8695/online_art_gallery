@@ -32,11 +32,16 @@ urlpatterns = [
     path('artsupplies/',views.artsupplies,name='artsupplies'),
     path('shop/',views.shop,name='shop'),
     path('styles/',views.styles,name='styles'),
-    
+    path('art_work_details/',views.art_work_details,name='art_work_details'),
+    path('add_art_work/',views.add_art_work,name='add_art_work'),
+    path('artist_details/',views.artist_details,name='artist_details'),
+    path('artists_dashboard/',views.artists_dashboard,name='artists_dashboard'),
     path('accounts/',include('accounts.urls')),
+    # path('artworks/',include('artworks.urls')),
     # path('artists/',include('artists.urls')),
     # path('styles/',include('styles.urls')),
     
     
     
 ]
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
