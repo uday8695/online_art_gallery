@@ -5,8 +5,7 @@ from datetime import datetime
 
 class Artists(models.Model):
     Artist_id=models.CharField(max_length=50)
-    first_name = models.CharField(max_length=50)
-    last_name = models.CharField(max_length=50)
+    artist_name = models.CharField(max_length=50)
     artist_age = models.CharField(max_length=50)
     category= models.CharField(max_length=50)
     experience= models.PositiveIntegerField()

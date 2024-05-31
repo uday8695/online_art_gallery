@@ -15,7 +15,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
@@ -31,17 +31,18 @@ urlpatterns = [
     path('artworks/',views.artworks,name='artworks'),
     path('artsupplies/',views.artsupplies,name='artsupplies'),
     path('shop/',views.shop,name='shop'),
-    path('styles/',views.styles,name='styles'),
-    path('art_work_details/',views.art_work_details,name='art_work_details'),
-    path('add_art_work/',views.add_art_work,name='add_art_work'),
+    # path('styles/',views.styles,name='styles'),
     path('artist_details/',views.artist_details,name='artist_details'),
     path('artists_dashboard/',views.artists_dashboard,name='artists_dashboard'),
     path('accounts/',include('accounts.urls')),
     # path('artworks/',include('artworks.urls')),
     # path('artists/',include('artists.urls')),
     # path('styles/',include('styles.urls')),
-    
-    
-    
+    path('add_art_work/',views.add_art_work,name='add_art_work'),
+    path('art_work_details/',views.art_work_details,name='art_work_details'),
+     path('items/',views.items,name='items'),
 ]
+    
+    
+urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

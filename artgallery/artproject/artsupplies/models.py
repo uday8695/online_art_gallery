@@ -16,10 +16,10 @@ class Artsupplies(models.Model):
     product_name = models.CharField(max_length=50)
     category = models.CharField(max_length=50)
     brand = models.CharField(max_length=50)
-    supplier_name= models.CharField(max_length=50)
+ 
     price= models.PositiveIntegerField()
     description= models.CharField(max_length=50)
     image_url=models.URLField()
-    status=models.CharField(max_length=20)
+    
     def __str__(self):
         return f"{self.product_name} {self.category}"

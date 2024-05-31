@@ -21,7 +21,7 @@ class Shop(models.Model):
     image_url=models.URLField()
 
     def __str__(self):
-        return f"{self.title}"
+        return f"{self.product_name}"
     
 # Product ID: A unique identifier for each product.
 # Name: The name of the product (e.g., artwork title, type of art supplies).

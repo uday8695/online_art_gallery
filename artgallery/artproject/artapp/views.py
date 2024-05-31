@@ -1,4 +1,4 @@
-from django.shortcuts import render,get_object_or_404
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
 # Create your views here.
 # def art(request):
@@ -13,39 +13,78 @@ def footer(request):
 def home(request):
     return render(request,'home.html')
 
-def artists(request):
-    return render(request,'artists.html')
-
-def shop(request):
-    return render(request,'shop.html')
-
 def artworks(request):
     return render(request,'artworks.html')
 
 def artsupplies(request):
     return render(request,'artsupplies.html')
 
-def styles(request):
-    return render(request,'styles.html')
+def items(request):
+    return render(request,'items.html')
 
+from shop.models import Shop
+def shop(request):
+    product= Shop.objects.all()
+    return render(request,'shop.html',{'product':product})
 
-def art_work_details(request):
-    return render(request,'art_work_details.html')
-
-def add_art_work(request):
-    return render(request,'add_art_work.html')
 
 def artists_dashboard(request):
     return render(request,'artists_dashboard.html')
 
+from artists.models import Artists
 
 def artist_details(request):
-    return render(request,'artist_details.html')
+    Artist= Artists.objects.all()
+    return render(request,'artist_details.html',{'Artist':Artist})
+
+
+from artists.forms import ArtistForm
+
+def artists(request):
+    if request.method == 'POST':
+        form = ArtistForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('artist_details.html')
+    else:
+        form = ArtistForm()
+    return render(request,"artists.html",{'form':form})
+
+
+from django.shortcuts import render,redirect
+from artworks.models import Artworks
+from artworks.forms import ArtworkForm
+
+
+def add_art_work(request):
+    if request.method == 'POST':
+        form = ArtworkForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('art_work_details')
+    else:
+        form = ArtworkForm()
+    return render(request,"add_art_work.html",{'form':form})
+
+
+def art_work_details(request):
+    artworks = Artworks.objects.all()
+    return render(request, "art_work_details.html",{'artworks':artworks})
+
+
+# def shop(request):
+#     return render(request,'shop.html')
+
+# def art_work_details(request):
+#     return render(request,'art_work_details.html')
+
+# def add_art_work(request):
+#     return render(request,'add_art_work.html')
 
 # from artworks.models import Artworks
 
 # def art_work_details(request, name):
-#     artwork = get_object_or_404(Artworks,name=name)
+#     artwork = Artworks.objects.all(Artworks,name=name)
 #     return render(request, 'art_work_details.html',{'artwork':artwork})
 
 # def Login(request):
@@ -84,4 +123,4 @@ def artist_details(request):
 #         artworks.save()
         
 
-    return render(request, 'add_art_work.html')
+#     return render(request, 'add_art_work.html')

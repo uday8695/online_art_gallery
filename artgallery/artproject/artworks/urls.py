@@ -5,8 +5,6 @@
 
 # urlpatterns = [
 #     path('admin/', admin.site.urls),
-
-#     path('art_work_details/',views.art_work_details,name='art_work_details'),
 #     path('add_art_work/',views.add_art_work,name='add_art_work'),
-
+#     path('art_work_details/',views.art_work_details,name='art_work_details'),
 # ]

@@ -51,14 +51,7 @@
             .product h2 {
                 margin-top: 20px;
             }
-            .product p {
-                margin-bottom: 20px;
-            }
-            .product button {
-                padding: 10px 20px;
-                border: none;
-                cursor: pointer;
-            }
+           
         </style>
     </head>
     <body>
@@ -69,45 +62,30 @@
         {% comment %} <p><strong>Medium of art:</strong>{{ product.medium }}</p> {% endcomment %}
         <div class="scroll-container">
             
-        <h1>Welcome to our Shop</h1>
-        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; margin: 50px;">
+        <h1>Welcome to artsupplies page</h1>
+        <div style="display: flex; justify-content: span; flex-wrap: wrap; margin: 25px;">
             <div class="product">
-                <img src="{% static 'images/Scary night art.jpg' %}" alt="Scary night art">
-                <h2>Scary night art</h2>
-                <p>$449</p>
-                <button class="btn btn-primary">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="{% static 'images/modern-artwork.jpg' %}" alt="Modern Artwork">
-                <h2>Modern Artwork</h2>
-                <p>$600</p>
-                <button class="btn btn-primary">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="{% static 'images/flower.jpeg' %}" alt="Modern Artwork">
-                <h2>realistic flower Artwork</h2>
-                <p>$499</p>
-                <button class="btn btn-primary">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="{% static 'images/radha portrait.jpeg' %}" alt="Mona Lisa">
-                <h2>Radha Portrait</h2>
-                <p>$300</p>
-                <button class="btn btn-primary">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="{% static 'images/download.jpeg' %}" alt="Mona Lisa">
-                <h2>realistic girl portrait</h2>
-                <p>$280</p>
-                <button class="btn btn-primary">Add to Cart</button>
-            </div>
-            <div class="product">
-                <img src="{% static 'images/monalisa.jpg' %}" alt="Mona Lisa">
-                <h2>Mona Lisa</h2>
-                <p>$200</p>
-                <button class="btn btn-primary">Add to Cart</button>
+                <img src="{% static 'images/canvas.jpeg' %}" alt="canvas">
+                <h2>Canvas</h2>
+                
             </div>
             
+            </div>
+            <div class="product">
+                <img src="{% static 'images/brushes-2.jpeg' %}" alt="brushes">
+                <h2>paint brushes</h2>
+               
+            </div>
+            <div class="product">
+                <img src="{% static 'images/sketchbook.jpeg' %}" alt="sketchbook">
+                <h2>sketchbook</h2>
+                
+            </div>
+            <div class="product">
+                <img src="{% static 'images/brushes.jpeg' %}" alt="faber castell">
+                <h2>brushes</h2>
+                
+            </div>
             
         </div>
     </div>

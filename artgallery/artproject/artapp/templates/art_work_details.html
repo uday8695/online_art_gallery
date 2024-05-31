@@ -35,14 +35,14 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" style="background-color: #007bff;">
-                        <h2>art work title {{ Artworks.title }}</h2>
+                        <h2>art work title:{{ artworks.title }}</h2>
                     </div>
                     <div class="card-body">
-                        <p><strong>Artwork title:</strong> {{ Artworks.title}}</p>
-                        <p><strong>Medium of art:</strong> {{ Artworks.medium }}</p>
-                        <p><strong>Category:</strong> {{ Artworks.category }}</p>
-                        <p><strong>Price:</strong> {{ Artworks.price }}</p>
-                        <p><strong>status:</strong> {{ Artworks.status }}</p>
+                       
+                        <p><strong>Medium of art:</strong>{{ artworks.medium }}</p>
+                        <p><strong>Category:</strong>{{ artworks.category }}</p>
+                        <p><strong>Price:</strong>{{ artworks.price }}</p>
+                        <p><strong>status:</strong>{{ artworks.status }}</p>
                         <a href="javascript:history.go(-1);" class="btn btn-primary">Back</a>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
         </div>
     </div>
 
-    {% include 'footer.html' %}
+    
 
     <!-- Bootstrap JS and dependencies -->
     <script src="{% static 'js/popper.min.js' %}"></script>

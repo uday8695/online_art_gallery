@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'artists',
     'artsupplies',
     'accounts',
-    'styles',
+    # 'styles',
     'shop',
     'artworks',
     
