@@ -14,28 +14,32 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <style>
-            /* Add some basic styling to the page */
-            html {
-                scroll-behavior: smooth;
-                padding-top: 100px;
-                padding-bottom: 75px;
-                
-              }
-        
-body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-  padding-left:50px;
-}
-
+          .video-background {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+          }
+          
+          .back-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 50%;
+          }
+          
+          html {
+            scroll-behavior: smooth;
+            padding-top: 100px;
+            padding-bottom: 75px;
+            
+          }
+    
+          
 .card {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
@@ -57,29 +61,13 @@ body {
   margin-bottom: 20px;
 }
 
-.btn {
-  background-color: #4CAF50;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #3e8e41;
-}
-
-/* Add some basic responsive design */
-
-@media (max-width: 768px) {
-  .container {
-    max-width: 100%;
-    padding: 0 10px;
-  }
-  .card {
-    margin-bottom: 20px;
-  }
+          .cards-container {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+          }
+          
+        </style>
 }
         </style>
     </head>
@@ -88,7 +76,11 @@ body {
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         {% include 'header.html' %}
-        
+        <section class="hero">
+          <video autoplay loop muted plays-inline class="back-video">
+            <source src="{% static 'images/bggg.mp4' %}"/>
+          </video>
+        </section>
         <div class="container mt-5">
             <div class="row">
               <div class="col-md-4 mb-3">

@@ -5,7 +5,7 @@ from .models import Artworks
 class ArtworkForm(forms.ModelForm):
     class Meta:
         model = Artworks
-        fields = ['Artwork_id','title','artist_id','artist_name','medium','dimensions','category','price','description','status','image_url']
+        fields = ['Artwork_id','title','artist_id','artist_name','medium','dimensions','category','price','description','status','image']
         widgets = {
             'Artwork_id':forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter artist id'}),
             'title':forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter artwork title'}),
@@ -17,5 +17,5 @@ class ArtworkForm(forms.ModelForm):
             'price': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter artwork price'}),
             'description': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter description'}),
             'status': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Enter sales status'}),
-            'image_url':forms.URLInput(attrs={'class': 'form-control', 'placeholder':'enter image url'}),
+            
         }

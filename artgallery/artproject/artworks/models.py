@@ -25,7 +25,7 @@ class Artworks(models.Model):
     price= models.CharField(max_length=50)
     description=models.CharField(max_length=50)
     status=models.CharField(max_length=10)
-    image_url=models.URLField()
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
 
     def __str__(self):
         return f"{self.title}"

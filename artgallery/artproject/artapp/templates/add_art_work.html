@@ -93,8 +93,10 @@
                 <input type="text" class="form-control" id="status" name="Purchase_status" required />
             </div>
             <div class="mb-3">
-                <label for="image_url" class="form-label">image</label>
-                <input type="url" class="form-control" id="image_url" name="image" required />
+                {% comment %} <label for="image_file" class="form-label">image</label>
+                <input type="image" class="form-control" id="image_url" name="image" required /> {% endcomment %}
+                <label for="image-file">Select an image file:</label>
+                <input type="file" id="image-file" name="image-file" accept="image/*">
             </div>
             
             <div>

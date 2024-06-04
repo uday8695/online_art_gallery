@@ -19,7 +19,7 @@ class Artsupplies(models.Model):
  
     price= models.PositiveIntegerField()
     description= models.CharField(max_length=50)
-    image_url=models.URLField()
+    image = models.ImageField(upload_to='images/', null=True, blank=True)
     
     def __str__(self):
         return f"{self.product_name} {self.category}"
