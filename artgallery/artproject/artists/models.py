@@ -14,5 +14,5 @@ class Artists(models.Model):
     created_at = models.DateTimeField(default=datetime.now)
 
     def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+        return f"{self.artist_name}"
     

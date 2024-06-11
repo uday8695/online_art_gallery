@@ -1,3 +1,4 @@
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -5,12 +6,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>art work details</title>
+    <title>Artist Details</title>
     <!-- Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     <!-- Custom CSS -->
     <style>
+        
+        html {
+            scroll-behavior: smooth;
+            padding-top: 60px;
+            padding-bottom: 75px;
+            
+          }
         .card {
             margin-top: 20px;
         }
@@ -35,15 +43,21 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" style="background-color: #007bff;">
-                        <h2>artist name: {{ Artist.artist_name }}</h2>
+                        <h2>Artists</h2>
                     </div>
                     <div class="card-body">
-                        <p><strong> Artist_id:</strong> {{ Artist.Artist_id}}</p>
-                        <p><strong>Medium of art:</strong> {{ Artist.medium }}</p>
-                        <p><strong>Category:</strong> {{ Artist.category }}</p>
-                        <p><strong>Experience:</strong> {{ Artist.experience }}</p>
-                        <p><strong>earnings:</strong> {{ Artist.earnings }}</p>
-                        <a href="javascript:history.go(-1);" class="btn btn-primary">Back</a>
+                        {% for artist in artists %}
+                            <div class="artist">
+                                <h3>Artist Name: {{ artist.artist_name }}</h3>
+                                <p><strong>Artist ID:</strong> {{ artist.Artist_id }}</p>
+                                <p><strong>Category:</strong> {{ artist.category }}</p>
+                                <p><strong>Experience:</strong> {{ artist.experience }}</p>
+                                <p><strong>Earnings:</strong> {{ artist.earnings }}</p>
+                                <p><strong>Number of drawings made:</strong> {{ artist.no_of_drawings_made }}</p>
+                               
+                            </div>
+                        {% endfor %}
+                        <a href="javascript:history.back();" class="btn btn-primary">Back</a>
                     </div>
                 </div>
             </div>
@@ -53,7 +67,8 @@
     {% include 'footer.html' %}
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

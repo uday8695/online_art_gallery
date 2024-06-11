@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>art work details</title>
+    <title>Art Work Details</title>
     <!-- Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
@@ -35,25 +35,34 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header" style="background-color: #007bff;">
-                        <h2>art work title:{{ artworks.title }}</h2>
+                        <h2>Art Works</h2>
                     </div>
                     <div class="card-body">
-                       
-                        <p><strong>Medium of art:</strong>{{ artworks.medium }}</p>
-                        <p><strong>Category:</strong>{{ artworks.category }}</p>
-                        <p><strong>Price:</strong>{{ artworks.price }}</p>
-                        <p><strong>status:</strong>{{ artworks.status }}</p>
-                        <a href="javascript:history.go(-1);" class="btn btn-primary">Back</a>
+                        {% for artwork in artworks %}
+                            <div class="artwork">
+                                <h3>{{ artwork.title }}</h3>
+                                <p><strong>Artist Name:</strong> {{ artwork.artist_name }}</p>
+                                <p><strong>Medium:</strong> {{ artwork.medium }}</p>
+                                <p><strong>Dimensions:</strong> {{ artwork.dimensions }}</p>
+                                <p><strong>Category:</strong> {{ artwork.category }}</p>
+                                <p><strong>Price:</strong> {{ artwork.price }}</p>
+                                <p><strong>Description:</strong> {{ artwork.description }}</p>
+                                <p><strong>Status:</strong> {{ artwork.status }}</p>
+                                <img src="{{ artwork.image_url }}" alt="{{ artwork.title }}">
+                            </div>
+                        {% endfor %}
+                        <a href="javascript:history.back();" class="btn btn-primary">Back</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    
+    {% include 'footer.html' %}
 
     <!-- Bootstrap JS and dependencies -->
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

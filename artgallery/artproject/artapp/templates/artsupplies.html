@@ -1,210 +1,103 @@
 {% load static %}
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>artsupplies page</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        <style>
-           
-          html {
-            scroll-behavior: smooth;
-            padding-top: 70px;
-            padding-bottom: 50px;
-            
-          }
-          body {
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Supplies Discovery</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-          }
-          
-          .container {
+            background-color: #f5f5f5; /* Set a light background color */
+        }
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
-            padding-left: 50px;
-          }
-          
-          .card {
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 20px;
-          }
-          
-          .card-body {
             padding: 20px;
-          }
-          
-          .card-title {
-            font-weight: bold;
-            margin-bottom: 10px;
-          }
-          
-          .card-text {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 20px;
-          }
-          
-          .btn {
-            background-color: #4CAF50;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-          }
-          
-          h2 {
-            padding: 30px;
+        }
+        h1 {
             text-align: center;
-          }
-          
-          .btn:hover {
-            background-color: #3e8e41;
-          }
-          
-          /* Add some basic responsive design */
-          
-          @media (max-width: 768px) {
-            .container {
-              max-width: 100%;
-              padding: 0 10px;
-            }
-            .card {
-              margin-bottom: 20px;
-            }
-          }
-          
-            .video-background {
-              position: relative;
-              width: 100%;
-              height: 100vh;
-              overflow: hidden;
-            }
-            
-            .back-video {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              z-index: -1;
-              opacity: 50%;
-            }
-            
-    
-  
-            .cards-container {
-              position: relative;
-              z-index: 1;
-              padding: 20px;
-            }
-            
-          
-        </style>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        {% include 'header.html' %}
-        <h2>Know about various art supplies</h2>
-        {% comment %} <h1>Art Supplies</h1>
-    <ul>
-        <li><a href="#">Paints</a></li>
-        <li><a href="#">Brushes</a></li>
-        <li><a href="#">Canvases</a></li>
-        <li><a href="#">Sketchbooks</a></li>
-    </ul>
-    <h2>Featured Art Supplies</h2>
-    <ul>
-        <li><a href="#">Acrylic Paint Set</a></li>
-        <li><a href="#">Watercolor Brush Set</a></li>
-        <li><a href="#">Canvas Panel</a></li>
-    </ul> {% endcomment %}
-    <section class="hero">
-      <video autoplay loop muted plays-inline class="back-video">
-        <source src="{% static 'images/bggg.mp4' %}"/>
-      </video>
-    </section>
-    <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">paints</h5>
-                <p class="card-text">Paint products </p>
-                <a href="/items/" class="btn btn-primary">view paints </a>
-              </div>
+            margin-top: 50px;
+            color: #333; /* Darken the text color */
+        }
+        .products {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px; /* Add some space between products */
+            margin-top: 50px;
+        }
+        .product {
+            width: 300px;
+            background-color: #fff; /* White background for products */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow effect */
+            transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+        }
+        .product:hover {
+            transform: translateY(-5px); /* Lift the product on hover */
+        }
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        .product h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            color: #555; /* Darken the text color */
+        }
+        .product a {
+            text-decoration: none;
+            color: inherit; /* Inherit text color */
+        }
+    </style>
+</head>
+<body>
+  <div>
+     
+    {% include 'header.html' %}
+  </div>
+    <div class="container">
+        <!-- Header Content -->
+        
+        <h1>Explore Our Art Supplies</h1>
+        
+        <div class="products">
+            <div class="product">
+                <a href="/canvas">
+                    <img src="{% static 'images/canvas.jpeg' %}" alt="Canvas">
+                    <h2>Canvas</h2>
+                </a>
             </div>
-          </div>
-          
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Brushes</h5>
-                <p class="card-text">Different Brushing art supplies can be viewed </p>
-                <a href="/items/" class="btn btn-primary">view brushes</a>
-              </div>
+            <div class="product">
+                <a href="/paint-brushes">
+                    <img src="{% static 'images/brushes-2.jpeg' %}" alt="Paint Brushes">
+                    <h2>Paint Brushes</h2>
+                </a>
             </div>
-          </div>
-
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Canvases</h5>
-                <p class="card-text">Different sizes of Canvases can be known</p>
-                <a href="/items/" class="btn btn-primary">view canvases</a>
-              </div>
+            <div class="product">
+                <a href="/sketchbooks">
+                    <img src="{% static 'images/sketchbook.jpeg' %}" alt="Sketchbooks">
+                    <h2>Sketchbooks</h2>
+                </a>
             </div>
-          </div>
-
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Sketchbooks</h5>
-                <p class="card-text">get details about sketchbooks </p>
-                <a href="/items/" class="btn btn-primary">view sketchbooks</a>
-              </div>
+            <div class="product">
+                <a href="/brushes">
+                    <img src="{% static 'images/brushes.jpeg' %}" alt="Brushes">
+                    <h2>Brushes</h2>
+                </a>
             </div>
-          </div>
-
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Acrylic Paint sets</h5>
-                <p class="card-text">view Different types of paint sets </p>
-                <a href="/items/" class="btn btn-primary">view paint sets</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mb-3">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">color pencils</h5>
-                <p class="card-text">view various types of color pencils</p>
-                <a href="/items/" class="btn btn-primary">view color pencils</a>
-              </div>
-            </div>
-          </div>
         </div>
     </div>
-      
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    </body>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>
-
