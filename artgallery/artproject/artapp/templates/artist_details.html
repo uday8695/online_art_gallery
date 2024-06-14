@@ -1,74 +1,78 @@
-
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Artist Details</title>
-    <!-- Bootstrap CSS -->
+    <title>Artists List</title>
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
-    <!-- Custom CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        
-        html {
-            scroll-behavior: smooth;
-            padding-top: 60px;
-            padding-bottom: 75px;
-            
-          }
-        .card {
-            margin-top: 20px;
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
         }
-        .card-header {
-            background-color: #007bff;
-            color: white;
+        .table-container {
+            margin-top: 50px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
         }
-        .card-body img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-            margin: 0 auto 10px;
+        .table thead {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .table th, .table td {
+            vertical-align: middle;
+        }
+        .icon {
+            font-size: 1.2rem;
+            color: #343a40;
+        }
+        h1 {
+            margin-bottom: 20px;
+            font-weight: bold;
         }
     </style>
 </head>
-
 <body>
-    {% include 'header.html' %}
-
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header" style="background-color: #007bff;">
-                        <h2>Artists</h2>
-                    </div>
-                    <div class="card-body">
-                        {% for artist in artists %}
-                            <div class="artist">
-                                <h3>Artist Name: {{ artist.artist_name }}</h3>
-                                <p><strong>Artist ID:</strong> {{ artist.Artist_id }}</p>
-                                <p><strong>Category:</strong> {{ artist.category }}</p>
-                                <p><strong>Experience:</strong> {{ artist.experience }}</p>
-                                <p><strong>Earnings:</strong> {{ artist.earnings }}</p>
-                                <p><strong>Number of drawings made:</strong> {{ artist.no_of_drawings_made }}</p>
-                               
-                            </div>
-                        {% endfor %}
-                        <a href="javascript:history.back();" class="btn btn-primary">Back</a>
-                    </div>
-                </div>
-            </div>
+    <div>
+        {% include 'header.html' %}
+    </div>
+    <div class="container">
+        <div class="table-container">
+            <h1 class="text-center mb-4"><i class="fas fa-palette icon"></i> Artists List</h1>
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col"><i class="fas fa-id-badge icon"></i> ID</th>
+                        <th scope="col"><i class="fas fa-user icon"></i> Name</th>
+                        <th scope="col"><i class="fas fa-birthday-cake icon"></i> Age</th>
+                        <th scope="col"><i class="fas fa-paint-brush icon"></i> Category</th>
+                        <th scope="col"><i class="fas fa-briefcase icon"></i> Experience</th>
+                        <th scope="col"><i class="fas fa-dollar-sign icon"></i> Earnings</th>
+                        <th scope="col"><i class="fas fa-pencil-alt icon"></i> Drawings Made</th>
+                        <th scope="col"><i class="fas fa-calendar-alt icon"></i> Created At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for artist in artists %}
+                    <tr>
+                        <th scope="row">{{ artist.Artist_id }}</th>
+                        <td>{{ artist.artist_name }}</td>
+                        <td>{{ artist.artist_age }}</td>
+                        <td>{{ artist.category }}</td>
+                        <td>{{ artist.experience }}</td>
+                        <td>{{ artist.earnings }}</td>
+                        <td>{{ artist.no_of_drawings_made }}</td>
+                        <td>{{ artist.created_at }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
         </div>
     </div>
-
-    {% include 'footer.html' %}
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

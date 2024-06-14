@@ -1,130 +1,170 @@
 {% load static %}
 <!DOCTYPE html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>home page</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
-        <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-        <style>
-          .video-background {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-          }
-          
-          .back-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;
-            opacity:50%;
-          }
-          
-          html {
-            scroll-behavior: smooth;
-            padding-top: 100px;
-            padding-bottom: 75px;
-            
-          }
-    
-          
-.card {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  overflow: hidden;
-}
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Home Page</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <style>
+    html {
+      scroll-behavior: smooth;
+      padding-top: 100px;
+  
+  }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
 
-.card-body {
-  padding: 20px;
-}
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 30px;
+      text-align: center;
+      text-transform: uppercase;
+      color: #333;
+      padding: 20px 0;
+      background-color: #f8f9fa; /* Light gray background */
+    }
 
-.card-title {
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+    .icon {
+      font-size: 60px;
+      color: #333;
+    }
 
-.card-text {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 20px;
-}
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
 
-          .cards-container {
-            position: relative;
-            z-index: 1;
-            padding: 20px;
-          }
-          
-        </style>
-    </head>
-    <body>
-        <!--[if lt IE 7]>
-            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
-        <![endif]-->
-        {% include 'header.html' %}
-        <section class="hero">
-          <video autoplay loop muted plays-inline class="back-video">
-            <source src="{% static 'images/bggg.mp4' %}"/>
-          </video>
-        </section>
-        <section>
-        <div class="container mt-5">
-            <div class="row">
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Artists</h5>
-                    <p class="card-text">All information about artists is available here</p>
-                    <a href="/artists_dashboard/" class="btn btn-primary">view artists </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Art supplies</h5>
-                    <p class="card-text">every art supply is Available Here</p>
-                    <a href="/artsupplies/" class="btn btn-primary">Art supplies</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Art works</h5>
-                    <p class="card-text">details of art works is Available Here</p>
-                    <a href="/artworks/" class="btn btn-primary">Art Works</a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4 mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Shop</h5>
-                    <p class="card-text">All Information about shopping Available Here</p>
-                    <a href="/shop/" class="btn btn-primary">View shop</a>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-          </div>
-        </section>
-        {% include 'footer.html' %}
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-    </body>
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    .card-text {
+      color: #666;
+      margin-bottom: 20px;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: 50px; /* Added margin to separate footer from content */
+    }
+
+    footer p {
+      font-size: 0.9rem;
+      margin-bottom: 5px; /* Added margin bottom for spacing */
+    }
+
+    /* Custom animations */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+
+    .fadeInUp {
+      animation-name: fadeInUp;
+    }
+  </style>
+</head>
+<body>
+
+{% include 'header.html' %}
+
+<section class="section-title animated fadeInUp">
+  <div class="container">
+    <h2>Explore Our Collections</h2>
+  </div>
+</section>
+
+<section class="container mt-5">
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card text-center animated fadeInUp delay-1s">
+        <div class="card-body">
+          <span class="icon">&#x1F3A8;</span>
+          <h5 class="card-title">Artists</h5>
+          <p class="card-text">Discover talented artists and their works.</p>
+          <a href="/artists_dashboard/" class="btn btn-primary">View Artists</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card text-center animated fadeInUp delay-1s">
+        <div class="card-body">
+          <span class="icon">&#x1F58D;</span>
+          <h5 class="card-title">Art Supplies</h5>
+          <p class="card-text">Explore a variety of art supplies.</p>
+          <a href="/artsupplies/" class="btn btn-primary">Art Supplies</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card text-center animated fadeInUp delay-1s">
+        <div class="card-body">
+          <span class="icon">&#x1F58C;</span>
+          <h5 class="card-title">Art Works</h5>
+          <p class="card-text">Browse through stunning art works.</p>
+          <a href="/artworks/" class="btn btn-primary">Art Works</a>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-4">
+      <div class="card text-center animated fadeInUp delay-1s">
+        <div class="card-body">
+          <span class="icon">&#x1F4AC;</span>
+          <h5 class="card-title">Shop</h5>
+          <p class="card-text">Shop for your favorite art pieces.</p>
+          <a href="/shop/" class="btn btn-primary">View Shop</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% include 'footer.html' %}
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
 </html>

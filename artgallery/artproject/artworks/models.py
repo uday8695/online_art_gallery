@@ -1,18 +1,5 @@
 from django.db import models
 
-# Create your models here.
-# Artwork ID: A unique identifier for each piece of art.
-# Title: The name of the artwork.
-# Artist ID: A unique identifier linking to the artist.
-# Artist Name: The name of the artist.
-# Medium: The materials or technique used (e.g., oil on canvas, watercolor, sculpture).
-# Dimensions: The size of the artwork (e.g., height, width, depth).
-# Category: The type of art (e.g., painting, sculpture, drawing).
-# Price: The selling price of the artwork.
-# Status: Availability status (e.g., available, sold, reserved).
-# Description: A brief description of the artwork.
-# Image URL: A link to an image of the artwork.
-
 
 class Artworks(models.Model):
     Artwork_id= models.PositiveIntegerField()
@@ -29,3 +16,17 @@ class Artworks(models.Model):
 
     def __str__(self):
         return f"{self.title}"
+    
+    
+# Create your models here.
+# Artwork ID: A unique identifier for each piece of art.
+# Title: The name of the artwork.
+# Artist ID: A unique identifier linking to the artist.
+# Artist Name: The name of the artist.
+# Medium: The materials or technique used (e.g., oil on canvas, watercolor, sculpture).
+# Dimensions: The size of the artwork (e.g., height, width, depth).
+# Category: The type of art (e.g., painting, sculpture, drawing).
+# Price: The selling price of the artwork.
+# Status: Availability status (e.g., available, sold, reserved).
+# Description: A brief description of the artwork.
+# Image URL: A link to an image of the artwork.

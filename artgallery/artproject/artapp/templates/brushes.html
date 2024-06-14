@@ -1,13 +1,107 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Brushes</title>
-    <!-- Include any necessary CSS files -->
+    <title>Types of Art Brushes</title>
+    <style>
+        {% comment %} body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; /* Light Gray */
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 20px; /* Reduced margin top */
+        } {% endcomment %}
+        h1, h2 {
+            text-align: center;
+            color: #333; /* Dark Gray */
+            font-weight: bold;
+        }
+        .brush-types {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .brush-type {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 20px);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .brush-type:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .brush-type h2 {
+            color: #007bff; /* Blue */
+            margin-top: 0;
+        }
+        .brush-type img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #333; /* Dark Gray */
+        }
+        .brush-type p {
+            color: #666; /* Medium Gray */
+            line-height: 1.6;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .brush-type {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .brush-type {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+    
 </head>
 <body>
-    <h1>Brushes</h1>
-    <!-- Add content specific to brushes -->
+    {% include 'header.html' %}
+    <div class="container">
+        <h1>Types of Art Brushes</h1>
+        <div class="brush-types">
+            <div class="brush-type">
+                <img src="{% static 'images/round-brush.jpg' %}" alt="Round Brush">
+                <h2>Round Brush</h2>
+                <p>Round brushes are versatile and can be used for creating thin lines, broad strokes, and details. They are suitable for various painting techniques, including watercolor, acrylic, and oil painting.</p>
+            </div>
+            <div class="brush-type">
+                <img src="{% static 'images/flat-brush.jpg' %}" alt="Flat Brush">
+                <h2>Flat Brush</h2>
+                <p>Flat brushes have a wide, flat shape that is ideal for covering large areas with paint. They are commonly used for applying backgrounds, washes, and varnishes, as well as for creating sharp edges and blending colors.</p>
+            </div>
+            <div class="brush-type">
+                <img src="{% static 'images/fan-brush.jpg' %}" alt="Fan Brush">
+                <h2>Fan Brush</h2>
+                <p>Fan brushes have thin, spread-out bristles that resemble a fan shape. They are excellent for blending, smoothing, and creating texture effects in painting. Fan brushes are often used in landscape painting to depict foliage, clouds, and other natural elements.</p>
+            </div>
+            <!-- Add more brush types with images and descriptions -->
+        </div>
+    </div>
 </body>
 </html>

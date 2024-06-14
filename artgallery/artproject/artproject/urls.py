@@ -9,6 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('header/', views.header, name='header'),
     path('footer/', views.footer, name='footer'),
+    path('', views.home, name='home'),
     path('home/', views.home, name='home'),
     path('artists/', views.artists, name='artists'),
     path('artworks/', views.artworks, name='artworks'),
@@ -20,8 +21,7 @@ urlpatterns = [
     path('add_art_work/', views.add_art_work, name='add_art_work'),
     path('art_work_details/', views.art_work_details, name='art_work_details'),
     path('items/', views.items, name='items'),
-    path('canvas/', views.canvas_page, name='canvas_page'),
-    path('paint-brushes/', views.paint_brushes_page, name='paint_brushes'),
+  
     path('sketchbooks/', views.sketchbooks_page, name='sketchbooks'),
     path('brushes/', views.brushes_page, name='brushes'),
 ]

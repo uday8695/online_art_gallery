@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Types of Sketchbooks</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+            padding-top: 100px;
+            padding-bottom: 75px;
+        }
+{% comment %}     
+        /* CSS styles for the page layout */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7; /* Official color: Light Gray */
+        }
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        } {% endcomment %}
+        h1, h2 {
+            text-align: center;
+            color: #333; /* Official color: Dark Gray */
+            font-weight: bold;
+        }
+        .sketchbook-types {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .sketchbook-type {
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            width: calc(33% - 20px);
+            transition: transform 0.3s ease-in-out;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .sketchbook-type:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+        .sketchbook-type h2 {
+            color: #007bff; /* Official color: Blue */
+            margin-top: 0;
+        }
+        .sketchbook-type img {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 10px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #333; /* Official color: Dark Gray */
+        }
+        .sketchbook-type p {
+            color: #666; /* Official color: Medium Gray */
+            line-height: 1.6;
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .sketchbook-type {
+                width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .sketchbook-type {
+                width: calc(100% - 20px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        {% include 'header.html' %}
+    </div>
+    <div class="container">
+        <h1>Types of Sketchbooks</h1>
+        <div class="sketchbook-types">
+            <div class="sketchbook-type">
+                <img src="{% static 'images/sketchbook.jpg' %}" alt="Sketchbook 1">
+                <h2>Sketchbook 1</h2>
+                <p>This sketchbook is perfect for beginners, with a soft cover and 80gsm paper. It's great for quick sketches and ideas.</p>
+            </div>
+            <div class="sketchbook-type">
+                <img src="{% static 'images/sketchbook2.jpg' %}" alt="Sketchbook 2">
+                <h2>Sketchbook 2</h2>
+                <p>This sketchbook is ideal for artists who prefer a harder cover and 100gsm paper. It's great for more detailed work and mixed media.</p>
+            </div>
+            <div class="sketchbook-type">
+                <img src="{% static 'images/sketchbook3.jpg' %}" alt="Sketchbook 3">
+                <h2>Sketchbook 3</h2>
+                <p>This sketchbook is perfect for watercolor artists, with 140gsm paper and a sewn binding. It's great for creating beautiful watercolor pieces.</p>
+            </div>
+            <!-- Add more sketchbook types with images and descriptions -->
+        </div>
+    </div>
+</body>
+</html>

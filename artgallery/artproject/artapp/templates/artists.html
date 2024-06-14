@@ -46,43 +46,44 @@
         <h1 class="text-center mb-4">Add Artist Information</h1>
         <form action="{% url 'artists' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
+            <!-- Form fields -->
             <div class="mb-3">
                 <label for="Artist_id" class="form-label">Artist ID</label>
-                <input type="text" class="form-control" id="Artist_id" name="ID" required />
+                <input type="text" class="form-control" id="Artist_id" name="Artist_id" required />
             </div>
             <div class="mb-3">
                 <label for="artist_name" class="form-label">Artist Name</label>
-                <input type="text" class="form-control" id="artist_name" name="Artist Name" required />
-            </div>
-            
-            <div class="mb-3">
-                <label for="artist_age" class="form-label">Artist_Age</label>
-                <input type="number" class="form-control" id="artist_age" name="Artist_Age"required />
+                <input type="text" class="form-control" id="artist_name" name="artist_name" required />
             </div>
             <div class="mb-3">
-                <label for="category" class="form-label"> category</label>
-                <input type="text" class="form-control" id="category" name="Category"  placeholder="drawing,painting,sculpture,watercolor" required />
+                <label for="artist_age" class="form-label">Artist Age</label>
+                <input type="number" class="form-control" id="artist_age" name="artist_age" required />
             </div>
             <div class="mb-3">
-                <label for="experience" class="form-label">experience</label>
-                <input type="number" class="form-control" id="experience" name="Experience" required />
+                <label for="category" class="form-label">Category</label>
+                <input type="text" class="form-control" id="category" name="category" placeholder="drawing, painting, sculpture, watercolor" required />
+            </div>
+            <div class="mb-3">
+                <label for="experience" class="form-label">Experience</label>
+                <input type="number" class="form-control" id="experience" name="experience" required />
             </div>
             <div class="mb-3">
                 <label for="earnings" class="form-label">Earnings</label>
-                <input type="text" class="form-control" id="earnings" name="Earnings" required />
+                <input type="text" class="form-control" id="earnings" name="earnings" required />
             </div>
             <div class="mb-3">
-                <label for="no_of_drawings_made" class="form-label">No_of_Drawings_made</label>
-                <input type="number" class="form-control" id="no_of_drawings_made" name="No_of_Drawings_made" required />
+                <label for="no_of_drawings_made" class="form-label">No of Drawings Made</label>
+                <input type="number" class="form-control" id="no_of_drawings_made" name="no_of_drawings_made" required />
             </div>
             <div class="mb-3">
                 <label for="date" class="form-label">Date</label>
                 <input type="date" class="form-control" id="date" name="created_date" required />
             </div>
             <div>
-                <button type="submit" class="btn btn-primary" >Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
+        
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>

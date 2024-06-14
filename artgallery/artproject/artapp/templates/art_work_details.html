@@ -11,18 +11,58 @@
     <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     <!-- Custom CSS -->
     <style>
+        html {
+            scroll-behavior: smooth;
+            padding-top: 100px;
+            padding-bottom: 75px;
+        }
         .card {
             margin-top: 20px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         .card-header {
-            background-color: #007bff;
+            background-color: #343a40;
             color: white;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
         }
         .card-body img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto 10px;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .artwork {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .artwork h3 {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            color: #343a40;
+        }
+        .artwork p {
+            margin: 5px 0;
+            color: #495057;
+        }
+        .artwork:hover {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -32,9 +72,9 @@
 
     <div class="container mt-5">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header" style="background-color: #007bff;">
+                    <div class="card-header">
                         <h2>Art Works</h2>
                     </div>
                     <div class="card-body">
@@ -48,7 +88,7 @@
                                 <p><strong>Price:</strong> {{ artwork.price }}</p>
                                 <p><strong>Description:</strong> {{ artwork.description }}</p>
                                 <p><strong>Status:</strong> {{ artwork.status }}</p>
-                                <img src="{{ artwork.image_url }}" alt="{{ artwork.title }}">
+                                <img src="{{ artwork.image_url.url }}" alt="{{ artwork.title }}">
                             </div>
                         {% endfor %}
                         <a href="javascript:history.back();" class="btn btn-primary">Back</a>
